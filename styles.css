@@ -1,0 +1,19 @@
+*{box-sizing:border-box}html,body{height:100%;margin:0;font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial}
+body{background:#0c0f13;color:#e6e7ee;overflow:hidden}
+#ui{position:fixed;left:0;right:0;top:0;padding:8px 12px;background:rgba(10,12,16,.6);backdrop-filter:blur(6px);z-index:10}
+.row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.col{display:flex;flex-direction:column;gap:4px}
+label{font-size:.9rem;opacity:.9}
+select,button,input[type=checkbox]{font-size:1rem;padding:6px 10px;border-radius:6px;border:1px solid #333;background:#141821;color:#e6e7ee}
+button{cursor:pointer}
+.hud{justify-content:space-between;margin-top:6px}
+.health{display:flex;align-items:center;gap:8px;min-width:260px}
+.health .name{width:38px;text-align:center;background:#202531;border-radius:4px;padding:4px 6px}
+.health .bar{flex:1;height:18px;background:#151924;border-radius:6px;overflow:hidden;border:1px solid #2b3446}
+.health .fill{height:100%;width:100%;background:linear-gradient(90deg,#27e0a6,#27a7e0)}
+.timer{min-width:72px;text-align:center;font-size:1.6rem;background:#151924;border:1px solid #2b3446;border-radius:6px;padding:4px 0}
+.help{opacity:.8;font-size:.9rem}
+#game{position:fixed;inset:0;display:block;width:100vw;height:100vh}
+#result{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(0,0,0,.65);backdrop-filter:blur(4px);gap:12px}
+#result.hidden{display:none}
+#result h2{margin:0;padding:16px 20px;background:#141821;border:1px solid #2b3446;border-radius:10px}

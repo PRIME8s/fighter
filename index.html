@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prime8s Arcade Fighter</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="A lightweight 2.5D arcade fighter using Prime8s GLB renders." />
+  <meta name="referrer" content="no-referrer" />
+</head>
+<body>
+  <div id="ui">
+    <div class="row">
+      <div class="col">
+        <label>Player 1</label>
+        <select id="p1Select"></select>
+      </div>
+      <div class="col">
+        <label>Player 2 / CPU</label>
+        <select id="p2Select"></select>
+      </div>
+      <div class="col">
+        <button id="startBtn">Start Match</button>
+      </div>
+    </div>
+    <div class="row hud">
+      <div class="health">
+        <div class="name">P1</div>
+        <div class="bar"><div id="p1Health" class="fill"></div></div>
+      </div>
+      <div class="timer" id="matchTimer">99</div>
+      <div class="health">
+        <div class="name">P2</div>
+        <div class="bar"><div id="p2Health" class="fill"></div></div>
+      </div>
+    </div>
+    <div class="row help">
+      <p><strong>Controls:</strong> P1: A/D move, W jump, S block, J punch, K kick. P2 (if human): ←/→ move, ↑ jump, ↓ block, 1 punch, 2 kick. Toggle CPU for P2 with the checkbox.</p>
+      <label><input type="checkbox" id="cpuToggle" checked> P2 is CPU</label>
+    </div>
+  </div>
+
+  <canvas id="game"></canvas>
+
+  <div id="result" class="hidden">
+    <h2 id="resultText"></h2>
+    <button id="restartBtn">Restart</button>
+  </div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
