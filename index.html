@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>Prime8s Fighter (GLB)</title>
+  <meta name="description" content="Arcade-style fighter using selectable GLB characters." />
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="referrer" content="no-referrer" />
+  <!-- Three.js & loaders from CDN -->
+  <script src="https://unpkg.com/three@0.155.0/build/three.min.js"></script>
+  <script src="https://unpkg.com/three@0.155.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://unpkg.com/three@0.155.0/examples/js/loaders/GLTFLoader.js"></script>
+</head>
+<body>
+  <div id="ui">
+    <div class="row">
+      <div class="col">
+        <label>Player 1</label>
+        <select id="p1Select"></select>
+      </div>
+      <div class="col">
+        <label>Player 2 / CPU</label>
+        <select id="p2Select"></select>
+      </div>
+      <div class="col">
+        <button id="startBtn" class="primary">Start Match</button>
+      </div>
+    </div>
+
+    <div class="row hud">
+      <div class="badge">P1</div>
+      <div class="bar"><div id="p1Health" class="fill"></div></div>
+      <div id="timer">60</div>
+      <div class="bar"><div id="p2Health" class="fill"></div></div>
+      <div class="badge">P2</div>
+    </div>
+
+    <div class="row footer">
+      Controls:
+      <div class="badge">P1</div>
+      <span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> move, <kbd>F</kbd> attack, <kbd>Space</kbd> jump</span>
+      <div class="badge">P2</div>
+      <span><kbd>←</kbd><kbd>→</kbd> move, <kbd>↑</kbd> jump, <kbd>/</kbd> attack</span>
+    </div>
+  </div>
+
+  <div id="canvas-wrap"><canvas id="game"></canvas></div>
+
+  <script defer src="main.js"></script>
+</body>
+</html>
