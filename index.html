@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>Prime8s Arcade Fighter</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Prime8s arcade fighter with same-origin GLBs, touch controls, specials & super meter." />
+  <meta name="referrer" content="no-referrer" />
+</head>
+<body>
+  <div id="ui">
+    <div class="row">
+      <div class="col">
+        <label>Player 1</label>
+        <select id="p1Select"></select>
+      </div>
+      <div class="col">
+        <label>Player 2 / CPU</label>
+        <select id="p2Select"></select>
+      </div>
+      <div class="col">
+        <button id="startBtn">Start Match</button>
+      </div>
+    </div>
+
+    <div class="row hud">
+      <div class="health">
+        <div class="name">P1</div>
+        <div class="bar"><div id="p1Health" class="fill"></div></div>
+      </div>
+      <div class="timer" id="matchTimer">99</div>
+      <div class="health">
+        <div class="name">P2</div>
+        <div class="bar"><div id="p2Health" class="fill"></div></div>
+      </div>
+    </div>
+
+    <div class="row meters">
+      <div class="meter">
+        <div class="label">SUPER</div>
+        <div class="bar"><div id="p1Meter" class="fill meterFill"></div></div>
+      </div>
+      <div class="spacer"></div>
+      <div class="meter">
+        <div class="label">SUPER</div>
+        <div class="bar"><div id="p2Meter" class="fill meterFill"></div></div>
+      </div>
+    </div>
+
+    <div class="row help">
+      <p><strong>Controls:</strong> P1: A/D move, W jump, S block, J punch, K kick, <b>L special</b>, <b>;</b> super. P2 (human): ←/→, ↑, ↓, 1/2, <b>3</b> special, <b>4</b> super.</p>
+      <label><input type="checkbox" id="cpuToggle" checked> P2 is CPU</label>
+    </div>
+  </div>
+
+  <canvas id="game"></canvas>
+
+  <div id="result" class="hidden">
+    <h2 id="resultText"></h2>
+    <button id="restartBtn">Restart</button>
+  </div>
+
+  <!-- Mobile Touch Controls -->
+  <div id="touchControls" aria-label="Mobile Controls">
+    <div class="leftPad">
+      <button class="btn round" id="btnLeft" aria-label="Move Left">◄</button>
+      <button class="btn round" id="btnRight" aria-label="Move Right">►</button>
+    </div>
+    <div class="rightPad">
+      <div class="rowBtns">
+        <button class="btn pill" id="btnJump" aria-label="Jump">Jump</button>
+        <button class="btn pill" id="btnBlock" aria-label="Block">Block</button>
+      </div>
+      <div class="rowBtns">
+        <button class="btn big" id="btnPunch" aria-label="Punch">Punch</button>
+        <button class="btn big" id="btnKick" aria-label="Kick">Kick</button>
+      </div>
+      <div class="rowBtns">
+        <button class="btn big accent" id="btnSpecial" aria-label="Special">Special</button>
+        <button class="btn big accent" id="btnSuper" aria-label="Super">Super</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="debugConsole" aria-live="polite"></div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
